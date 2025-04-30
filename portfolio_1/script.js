@@ -55,27 +55,41 @@ window.addEventListener('scroll', () => {
 
 // Contact Form Simulation
 // Contact Form Simulation
+// Replace your current form handler with this:
 const contactForm = document.querySelector('.contact-form');
-contactForm.addEventListener('submit', (e) => {
+contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const btn = contactForm.querySelector('button');
+    const originalText = btn.textContent;
+    
     btn.textContent = 'Sending...';
     btn.disabled = true;
 
-    // Netlify will handle the actual submission
-    setTimeout(() => {
-        btn.textContent = 'Message Sent!';
-        setTimeout(() => {
-            btn.textContent = 'Send Message';
-            btn.disabled = false;
+    try {
+        // Get form data
+        const formData = new FormData(contactForm);
+        
+        // Submit to Netlify
+        const response = await fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
+        });
+
+        if (response.ok) {
+            btn.textContent = 'Message Sent!';
             contactForm.reset();
-        }, 2000);
-    }, 1500);
-    
-    // Submit the form after the animation
-    setTimeout(() => {
-        contactForm.submit();
-    }, 1500);
+        } else {
+            btn.textContent = 'Error, Try Again';
+        }
+    } catch (error) {
+        btn.textContent = 'Error, Try Again';
+    } finally {
+        setTimeout(() => {
+            btn.textContent = originalText;
+            btn.disabled = false;
+        }, 3000);
+    }
 });
 
 // Animate Skill Bars
