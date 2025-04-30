@@ -56,38 +56,58 @@ window.addEventListener('scroll', () => {
 // Contact Form Simulation
 // Contact Form Simulation
 // Replace your current form handler with this:
+// Netlify Form Submission with Animation
 const contactForm = document.querySelector('.contact-form');
+
 contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const btn = contactForm.querySelector('button');
-    const originalText = btn.textContent;
+    const submitBtn = contactForm.querySelector('button');
+    const originalText = submitBtn.textContent;
     
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
-
+    // Visual feedback
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+    
     try {
-        // Get form data
+        // Prepare form data for Netlify
         const formData = new FormData(contactForm);
+        const encodedData = new URLSearchParams(formData).toString();
         
         // Submit to Netlify
-        const response = await fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(formData).toString()
+        const response = await fetch('/', {
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/x-www-form-urlencoded' 
+            },
+            body: encodedData
         });
-
+        
         if (response.ok) {
-            btn.textContent = 'Message Sent!';
+            // Success animation
+            submitBtn.textContent = '✓ Sent!';
             contactForm.reset();
+            
+            // Show temporary success message
+            const successMsg = document.createElement('div');
+            successMsg.className = 'form-success-message';
+            successMsg.textContent = 'Thank you! I\'ll get back to you soon.';
+            contactForm.appendChild(successMsg);
+            
+            // Remove message after delay
+            setTimeout(() => {
+                successMsg.remove();
+            }, 5000);
         } else {
-            btn.textContent = 'Error, Try Again';
+            throw new Error('Form submission failed');
         }
     } catch (error) {
-        btn.textContent = 'Error, Try Again';
+        submitBtn.textContent = '✗ Failed';
+        console.error('Form submission error:', error);
     } finally {
+        // Reset button after delay
         setTimeout(() => {
-            btn.textContent = originalText;
-            btn.disabled = false;
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
         }, 3000);
     }
 });
