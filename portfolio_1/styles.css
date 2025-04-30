@@ -1155,3 +1155,18 @@ header {
 .timeline-content h3 {
   color: #2B78E6 !important; /* Blue color */
 }
+/* Form Success Message */
+.form-success-message {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: rgba(46, 213, 115, 0.2);
+  color: #2ed573;
+  border-radius: 4px;
+  text-align: center;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
