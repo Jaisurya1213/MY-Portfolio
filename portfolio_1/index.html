@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Developer Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <div class="logo">Jai Surya</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="hero-image animate-right">
+            <div class="profile-circle">
+                <img src="assets\my photos\phot1.webp" alt="Developer Photo">
+            </div>
+        </div>
+        <div class="hero-content animate-left">
+            <h1>Hi, I'm <span class="highlight">Jai Surya</span></h1>
+            <h2>Python Developer</h2>
+            <p>Building efficient and scalable backend solutions with Python</p>
+            <div class="cta-buttons">
+                <a href="your-cv.pdf" class="btn btn-primary" download>Download CV</a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <h1 class="section-title animate-top">About <span class="highlight">Me</span></h1>
+        <div class="about-container">
+            <div class="about-image animate-left">
+                <img src= "assets\my photos\phot2.webp" alt="About Me">
+            </div>
+            <div class="about-content animate-right">
+                <h2>Python Developer & Problem Solver</h2>
+                <p>I'm M. Jai Surya, a passionate software engineer with a strong focus on Data Structures & Algorithms (DSA) and System Design. 
+                    I enjoy solving complex problems by applying efficient algorithms and designing scalable systems. Currently pursuing my B.E. in Electronics and Communication Engineering,
+                    I continuously improve my skills in problem-solving and system architecture. Let's connect if you're interested in tech discussions or collaboration!</p>
+                <div class="about-details">
+                    <div class="detail-item">
+                        <i class="fas fa-chevron-right"></i>
+                        <span><strong>Name:</strong> Jai Surya . M</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-chevron-right"></i>
+                        <span><strong>Experience:</strong> Fresher </span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-chevron-right"></i>
+                        <span><strong>Email:</strong>periyasamyjaisurya237@gmail.com</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-chevron-right"></i>
+                        <span><strong>Phone:</strong> +91-9894930551</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-chevron-right"></i>
+                        <span><strong>From:</strong> Tamilnadu, India </span>
+                    </div>
+                </div>
+                <a href="#projects" class="btn btn-primary">View My Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education-section">
+        <h1 class="section-title animate-top">My <span class="highlight">Education</span></h1>
+        <div class="timeline">
+            <div class="timeline-item animate-left">
+                <div class="timeline-content">
+                    <h2>University </h2>
+                    <h3>Electronics and Communication Engineering </h3>
+                    <span class="date"><i class="fas fa-calendar-alt"></i>2022-2026</span>
+                    <p>M Kumarasamy College of Engineering, Karur</p>
+                    <p></p>
+                </div>
+            </div>
+            <div class="timeline-item animate-right">
+                <div class="timeline-content">
+                    <h2>Higher Secondary</h2>
+                    <h3>Shri Vidya Barathi Matriculation Higher Secondary School</h3>
+                    <span class="date"><i class="fas fa-calendar-alt"></i>2021-2022</span>
+                    <p>Tiruchengode</p>
+                    <p></p>
+                </div>
+            </div>
+            <div class="timeline-item animate-left">
+                <div class="timeline-content">
+                    <h2>Secondary School</h2>
+                    <h3>Avvai Ksr Matric High School</h3>
+                    <span class="date"><i class="fas fa-calendar-alt"></i>2019-2020</span>
+                    <p>Tiruchengode</p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications-section">
+        <h1 class="section-title animate-top">My <span class="highlight">Certifications</span></h1>
+        <div class="certifications-container">
+            <div class="certificate-modal">
+                <span class="close-modal">&times;</span>
+                <img class="modal-content" id="modal-image">
+            </div>
+            <div class="certification-card animate-left">
+                <div class="certification-image">
+                    <img class="certificate-thumbnail" src="assets/certificates/cert1.jpg" alt="Python Certification">
+                </div>
+                <div class="certification-content">
+                    <h2>Python Developer Certification</h2>
+                    <p>Issued by Coding Academy</p>
+                </div>
+            </div>
+            <div class="certification-card animate-left">
+                <div class="certification-image">
+                    <img class="certificate-thumbnail" src="assets/certificates/cert2.jpg" alt="Python Certification">
+                </div>
+                <div class="certification-content">
+                    <h2>Python Developer Certification</h2>
+                    <p>Issued by Coding Academy</p>
+                </div>
+            </div>
+            <div class="certification-card animate-left">
+                <div class="certification-image">
+                    <img class="certificate-thumbnail" src="assets/certificates/cert3.jpg" alt="Python Certification">
+                </div>
+                <div class="certification-content">
+                    <h2>Python Developer Certification</h2>
+                    <p>Issued by Coding Academy</p>
+                </div>
+            </div>
+            <div class="certification-card animate-left">
+                <div class="certification-image">
+                    <img class="certificate-thumbnail" src="assets/certificates/cert4.jpg" alt="Python Certification">
+                </div>
+                <div class="certification-content">
+                    <h2>Python Developer Certification</h2>
+                    <p>Issued by Coding Academy</p>
+                </div>
+            </div>
+            <!-- Add more certification cards -->
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <h1 class="section-title animate-top">My <span class="highlight">Skills</span></h1>
+        <div class="skills-container">
+            <div class="skills-category animate-left">
+                <h2><i class="fab fa-python"></i> Python Development</h2>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>Python Core</span>
+                        <span>90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" data-percent="90"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skills-category animate-right">
+                <h2><i class="fas fa-project-diagram"></i> DSA</h2>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>Problem Solving</span>
+                        <span>92%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" data-percent="92"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skills-category animate-left">
+                <h2><i class="fas fa-server"></i> DevOps</h2>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>CI/CD</span>
+                        <span>85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" data-percent="85"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skills-category animate-right">
+                <h2><i class="fas fa-sitemap"></i> System Design</h2>
+                <div class="skill-item">
+                    <div class="skill-info">
+                        <span>Architecture</span>
+                        <span>88%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-level" data-percent="88"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <h1 class="section-title animate-top">My <span class="highlight">Projects</span></h1>
+        <div class="projects-container">
+            <a href="https://github.com/yourusername/ecommerce" class="project-card animate-left" target="_blank">
+                <div class="project-image">
+                    <img src="assets\project photos\prjt1.jpg" alt="Project 1">
+                </div>
+                <div class="project-content">
+                    <h2>Tera-Hertz Antenna For Next Generation</h2>
+                    <p>My project focuses on the design and analysis of a terahertz antenna, which operates in the frequency range of 0.1 to 10 THz. 
+                        The goal of the project is to develop a compact, high-performance antenna suitable for high-speed wireless communication and advanced imaging applications. 
+                    </p>
+                    <div class="project-tech">
+                        <span>Antenna-design</span>
+                        <span>PCB-design</span>
+                        <span>Anysys-Tool</span>
+                    </div>
+                </div>
+            </a>
+            <a href="https://github.com/Jaisurya1213/E-commerce-website" class="project-card animate-right" target="_blank">
+                <div class="project-image">
+                    <img src="assets\project photos\prjt3.jpg" alt="Project 2">
+                </div>
+                <div class="project-content">
+                    <h2>Food Ordering System</h2>
+                    <p>My project is a front-end food ordering website designed using HTML, CSS, and JavaScript. The aim of the project is to create an interactive, user-friendly platform where users can browse a restaurant’s menu, 
+                        view item details, and place food orders. The website features a clean layout with responsive design, hover effects, and smooth transitions to enhance the user experience.</p>
+                    <div class="project-tech">
+                        <span>Html</span>
+                        <span>css</span>
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+            </a>
+            <a href="https://github.com/yourusername/image-slider" class="project-card animate-left" target="_blank">
+                <div class="project-image">
+                    <img src="assets\project photos\prjt2.jpg"" alt="Project 3">
+                </div>
+                <div class="project-content">
+                    <h2>Sun Tracking Solar Panel</h2>
+                    <p>My project is based on a sun tracking solar panel system designed to automatically follow the sun’s movement across the sky to maximize solar energy absorption. 
+                        The system uses light-dependent resistors (LDRs) as sensors to detect sunlight intensity and adjusts the panel's position accordingly using servo motors.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Microcontroller</span>
+                        <span>Ebeded C</span>
+                    </div>
+                </div>
+            </a>
+            <a href= "https://github.com/Jaisurya1213/Image-Slider" class="project-card animate-right" target="_blank">
+                <div class="project-image">
+                    <img src="assets\project photos\prjt4.jpg" alt="Project 4">
+                </div>
+                <div class="project-content">
+                    <h2>Image Slider</h2>
+                    <p>My project is a simple and visually appealing image slider created using only HTML and CSS. 
+                        The image slider automatically transitions between multiple images and includes smooth animations and navigation controls like previous/next buttons or indicators. 
+                        The design is fully responsive, ensuring it works well on both desktop and mobile devices.</p>
+                    <div class="project-tech">
+                        <span>Html</span>
+                        <span>Css</span>
+                        <span></span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h1 class="section-title animate-top">Contact <span class="highlight">Me</span></h1>
+        <div class="contact-container">
+            <div class="contact-info animate-left">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>periyasamyjaisurya237@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+91 12345 67890</span>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/Jaisurya1213" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/jai-surya-m-04434629b/" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/_surxya__/" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <form class="contact-form animate-right" action="https://formspree.io/f/xqaqebar" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="subject" placeholder="Subject">
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
