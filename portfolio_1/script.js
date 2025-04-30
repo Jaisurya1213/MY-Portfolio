@@ -54,6 +54,7 @@ window.addEventListener('scroll', () => {
 });
 
 // Contact Form Simulation
+// Contact Form Simulation
 const contactForm = document.querySelector('.contact-form');
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -61,6 +62,7 @@ contactForm.addEventListener('submit', (e) => {
     btn.textContent = 'Sending...';
     btn.disabled = true;
 
+    // Netlify will handle the actual submission
     setTimeout(() => {
         btn.textContent = 'Message Sent!';
         setTimeout(() => {
@@ -68,6 +70,11 @@ contactForm.addEventListener('submit', (e) => {
             btn.disabled = false;
             contactForm.reset();
         }, 2000);
+    }, 1500);
+    
+    // Submit the form after the animation
+    setTimeout(() => {
+        contactForm.submit();
     }, 1500);
 });
 
