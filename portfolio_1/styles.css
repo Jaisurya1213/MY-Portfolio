@@ -374,35 +374,6 @@ nav {
 .timeline-item .date i {
   margin-right: 5px;
 }
-/*hhhwjwjwwwhh
-/*kwehvehvhveh*/
-:root {
-  --primary: #9370DB; /* Light purple for headings */
-  --secondary: #81A1C1;
-  --light: #ECEFF4;
-  --dark: #2E3440;
-  --text: #000000;    /* Black text */
-  --bg: #FFFFFF;      /* White background */
-  --highlight: #88C0D0;
-  --shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  --transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  color: var(--text);
-  background-color: var(--bg);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-/* ... (All other styles remain the same until skills section) ... */
 
 .skills-section {
   padding: 5rem 5%;
@@ -472,7 +443,17 @@ body {
   transition: width 1.5s ease-in-out;
 }
 
-/* ... (Rest of the CSS remains exactly the same) ... */
+.skill-level {
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--highlight));
+  border-radius: 3px;
+  transition: width 2s ease-in-out;
+}
+
+.skill-bar.in-view .skill-level {
+  width: attr(data-width);
+}
 
 .projects-section {
   padding: 5rem 5%;
@@ -487,11 +468,14 @@ body {
 }
 
 .project-card {
-  background-color: white;
+  background: white;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--shadow);
   transition: var(--transition);
+  max-width: 320px;
+  margin: 0 auto;
+  border: 1px solid #e0e0e0;
 }
 
 .project-card:hover {
@@ -520,21 +504,20 @@ body {
 }
 
 .project-content h2 {
+  font-size: 1.1rem;
   margin-bottom: 0.5rem;
-  color: var(--primary);
-  font-size: 1.2rem;
 }
 
 .project-content p {
-  margin-bottom: 1rem;
   font-size: 0.9rem;
-  color: var(--text);
+  margin-bottom: 0.7rem;
 }
 
 .project-tech {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  margin-bottom: 0.7rem;
 }
 
 .project-tech span {
@@ -543,6 +526,53 @@ body {
   border-radius: 4px;
   font-size: 0.8rem;
   color: var(--primary);
+}
+
+.github-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding: 0.5rem 1rem;
+  background-color: #24292e;
+  color: white;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: var(--transition);
+  width: fit-content;
+}
+
+.github-btn:hover {
+  background-color: #2f363d;
+  transform: translateY(-2px);
+}
+
+.github-btn i {
+  font-size: 1.1rem;
+}
+
+.linkedin-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #0077b5;
+  color: white;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.linkedin-btn:hover {
+  background-color: #005983;
+  transform: translateY(-2px);
+}
+
+.linkedin-btn i {
+  font-size: 1.1rem;
 }
 
 .contact-section {
@@ -800,10 +830,7 @@ body {
     opacity: 0;
   }
 }
-/* ======= styles.css ======= */
-/* Add these changes to your existing styles */
 
-/* 1. Fixed Hero Section Alignment */
 .hero {
   display: flex;
   flex-direction: column;
@@ -832,7 +859,7 @@ body {
   overflow: hidden;
   box-shadow: var(--shadow);
 }
-/* Remove static underline from nav links */
+
 .nav-links li a {
   text-decoration: none;
   position: relative;
@@ -854,7 +881,6 @@ body {
   width: 100%;
 }
 
-/* Animated skill bar fix */
 .skill-level {
   width: 0;
   height: 100%;
@@ -866,7 +892,6 @@ body {
 .skill-bar.in-view .skill-level {
   width: attr(data-width);
 }
-/* ========== STYLE FIXES ONLY ========== */
 
 .nav-links li a {
   text-decoration: none;
@@ -889,7 +914,6 @@ body {
   width: 100%;
 }
 
-/* Home Section Fix: Restore alignment */
 .hero {
   display: flex;
   flex-direction: row;
@@ -899,7 +923,7 @@ body {
   min-height: 100vh;
   text-align: left;
 }
-/* Base state of skill level */
+
 .skill-level {
   width: 0;
   height: 100%;
@@ -908,12 +932,11 @@ body {
   transition: width 2s ease-in-out;
 }
 
-/* When in view, this class will be added via JS */
 .skill-bar.animate .skill-level.width-90 { width: 90%; }
 .skill-bar.animate .skill-level.width-92 { width: 92%; }
 .skill-bar.animate .skill-level.width-85 { width: 85%; }
 .skill-bar.animate .skill-level.width-88 { width: 88%; }
-/* Certificate Modal Styles */
+
 .certificate-modal {
   display: none;
   position: fixed;
@@ -953,23 +976,19 @@ body {
   from {transform: scale(0.9); opacity: 0;}
   to {transform: scale(1); opacity: 1;}
 }
-/* Remove underline from all text inside project cards */
+
 .projects-section a.project-card {
   text-decoration: none;
 }
 
-/* Optional: Add underline on hover for the entire card if needed */
 .projects-section a.project-card:hover {
   text-decoration: none;
 }
 
-/* Ensure paragraph text has no underline */
 .project-card .project-content p {
   text-decoration: none !important;
 }
-/*Only for sample
-/*checking new colours
-/* Update heading colors */
+
 h1, h2, h3 {
   color: var(--primary);
 }
@@ -982,36 +1001,30 @@ h1, h2, h3 {
   color: var(--primary);
 }
 
-/* Skill bar colors */
 .skills-category:nth-child(1) .skill-level {
-  background: #ff3434; /* Red */
+  background: #ff3434;
 }
 .skills-category:nth-child(2) .skill-level {
-  background: #4ECDC4; /* Blue */
+  background: #4ECDC4;
 }
 .skills-category:nth-child(3) .skill-level {
-  background: #2E3440; /* Black */
+  background: #2E3440;
 }
 .skills-category:nth-child(4) .skill-level {
-  background: #FFD93D; /* Yellow */
+  background: #FFD93D;
 }
 
-/* Remove gradient from skill bars */
 .skill-level {
   background: var(--primary);
 }
-/*............*/
-/*............*/
-/*............*/
-/* Update :root variables */
+
 :root {
-  --primary: #2B78E6;       /* Primary blue */
-  --accent-yellow: #FFD700; /* New yellow accent color */
-  --text: #2d3436;         /* Dark text */
-  --bg: #ffffff;           /* White background */
+  --primary: #2B78E6;
+  --accent-yellow: #FFD700;
+  --text: #2d3436;
+  --bg: #ffffff;
 }
 
-/* Hero Section with Yellow Splash */
 .hero {
   position: relative;
   overflow: hidden;
@@ -1032,7 +1045,6 @@ h1, h2, h3 {
   clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
 }
 
-/* Navigation Bar */
 header {
   background: rgba(255, 255, 255, 0.95) !important;
   backdrop-filter: blur(8px);
@@ -1054,7 +1066,6 @@ header {
   color: var(--primary) !important;
 }
 
-/* Hero Content Adjustments */
 .hero-content h1 {
   color: var(--text) !important;
 }
@@ -1067,7 +1078,6 @@ header {
   color: var(--primary);
 }
 
-/* Button Styles */
 .btn-primary {
   background: var(--primary);
   border-color: var(--primary);
@@ -1078,84 +1088,75 @@ header {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(43, 120, 230, 0.3);
 }
-/* Navigation Bar Background */
+
 header {
-  background: #a0cfff !important; /* Light grey background */
+  background: #a0cfff !important;
 }
 
-/* Section Titles (Purple) */
 .section-title {
-  color: #9359fe !important; /* Purple color */
+  color: #9359fe !important;
 }
 
-/* Inner Content Headings (Blue) */
 .about-content h2,
 .skills-category h2,
 .timeline-content h2,
 .project-content h2 {
-  color: #2B78E6 !important; /* Blue color */
+  color: #2B78E6 !important;
 }
 
-/* Education Timeline Specific Colors */
-.timeline-item:nth-child(1) h2 { /* University */
-  color: #E76F51 !important; /* Teal */
+.timeline-item:nth-child(1) h2 {
+  color: #E76F51 !important;
 }
 
-.timeline-item:nth-child(2) h2 { /* Higher Secondary */
-  color: #E76F51 !important; /* Coral */
+.timeline-item:nth-child(2) h2 {
+  color: #E76F51 !important;
 }
 
-.timeline-item:nth-child(3) h2 { /* Senior Secondary */
-  color: #E76F51 !important; /* Royal Blue */
+.timeline-item:nth-child(3) h2 {
+  color: #E76F51 !important;
 }
-/*....................*/
-/* Navigation Bar Background */
+
 header {
-  background: #f8f9fa !important; /* Light grey */
+  background: #f8f9fa !important;
   border-bottom: 1px solid #b7bec5;
 }
 
-/* Section Titles (All in Purple) */
 .section-title {
-  color: #6f42c1 !important; /* Purple */
+  color: #6f42c1 !important;
 }
 
-/* Remove highlight color from span in section titles */
 .section-title .highlight {
   color: inherit !important;
 }
 
-/* Inner Content Headings (Blue) */
 .about-content h2,
 .skills-category h2,
 .timeline-content h2,
 .project-content h2,
 .certification-content h2 {
-  color: #2B78E6 !important; /* Blue */
+  color: #2B78E6 !important;
 }
 
-/* Education Timeline Specific Colors */
-.timeline-item:nth-child(1) h2 { /* University */
-  color: #E76F51 !important; /* Teal */
+.timeline-item:nth-child(1) h2 {
+  color: #E76F51 !important;
 }
 
-.timeline-item:nth-child(2) h2 { /* Higher Secondary */
-  color: #E76F51 !important; /* Coral */
+.timeline-item:nth-child(2) h2 {
+  color: #E76F51 !important;
 }
 
-.timeline-item:nth-child(3) h2 { /* Senior Secondary */
-  color: #E76F51 !important; /* Royal Blue */
+.timeline-item:nth-child(3) h2 {
+  color: #E76F51 !important;
 }
 
-/* Keep main purple color variable */
 :root {
-  --primary: #6f42c1; /* Purple */
+  --primary: #6f42c1;
 }
-/* Education Timeline Institution Names */
+
 .timeline-content h3 {
-  color: #2B78E6 !important; /* Blue color */
+  color: #2B78E6 !important;
 }
-/* Form Success Message */
+
 .form-success-message {
   margin-top: 1rem;
   padding: 0.75rem;
@@ -1170,14 +1171,22 @@ header {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #f1f1f1; /* Light gray background */
-  color: #333;               /* Dark gray text */
+  background-color: #f1f1f1;
+  color: #333;
   font-size: 14px;
   position: relative;
   bottom: 0;
   width: 100%;
 }
-S
+
+.btn.btn-primary {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}
